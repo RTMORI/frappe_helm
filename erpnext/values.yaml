@@ -315,7 +315,7 @@ jobs:
     # jobName: ""
     enabled: true
     forceCreate: true
-    siteName: "prod.frappe.local"
+    siteName: "smart.jutecomm.gov.in"
     adminPassword: "admin"
     adminExistingSecret: ""
     adminExistingSecretKey: "admin"
