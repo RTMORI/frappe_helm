@@ -257,8 +257,9 @@ socketio:
 persistence:
   worker:
     enabled: true
-    size: 3Gi
-    storageClass: "nfs"
+    # size: 3Gi
+    # storageClass: "nfs"
+    existingClaim: "frappe-prod"
     accessModes:
     - ReadWriteMany
   logs:
