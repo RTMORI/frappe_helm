@@ -94,6 +94,7 @@ spec:
               --db-type=${DB_TYPE} \
               --db-host=${DB_HOST} \
               --db-port=${DB_PORT} \
+              --db-name=${DB_NAME} \
               --admin-password=${ADMIN_PASSWORD} \
               --mariadb-root-username=${DB_ROOT_USER} \
               --mariadb-root-password=${DB_ROOT_PASSWORD} \
@@ -127,6 +128,8 @@ spec:
             value: "{{ .Values.jobs.createSite.siteName }}"
           - name: "DB_TYPE"
             value: {{ .Values.jobs.createSite.dbType }}
+          - name: "DB_NAME"
+            value: {{ .Values.jobs.createSite.dbName }}
           - name: "DB_HOST"
             {{- if .Values.postgresql.host }}
             value: {{ .Values.postgresql.host }}
