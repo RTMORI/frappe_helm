@@ -44,6 +44,11 @@ spec:
             mountPath: /home/frappe/frappe-bench/sites
           - name: logs
             mountPath: /home/frappe/frappe-bench/logs
+          {{- with .Values.worker.gunicorn.extraVolumeMounts }}
+          # >>> add this block
+          {{- toYaml . | nindent 10 }}
+          # <<< end add
+          {{- end }}
           ports:
             - name: http
               containerPort: {{ .Values.worker.gunicorn.service.port }}
@@ -82,6 +87,11 @@ spec:
           {{- else }}
           emptyDir: {}
           {{- end }}
+        {{- with .Values.worker.gunicorn.extraVolumes }}
+        # >>> add this block
+        {{- toYaml . | nindent 8 }}
+        # <<< end add
+        {{- end }}
       {{- with .Values.worker.gunicorn.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
