@@ -324,6 +324,7 @@ jobs:
     - "erpnext"
     - "dev_jute_smart"
     dbType: "mariadb"
+    dbName: "JuteSmartDB"
     backoffLimit: 0
     resources: {}
     nodeSelector: {}
