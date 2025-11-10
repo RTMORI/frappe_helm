@@ -61,6 +61,11 @@ spec:
             mountPath: /home/frappe/frappe-bench/sites
           - name: logs
             mountPath: /home/frappe/frappe-bench/logs
+          {{- with .Values.worker.default.extraVolumeMounts }}
+          # >>> add this block
+          {{- toYaml . | nindent 10 }}
+          # <<< end add
+          {{- end }}
       {{- if .Values.worker.default.sidecars }}
         {{- toYaml .Values.worker.default.sidecars | nindent 8 }}
       {{- end }}
@@ -89,6 +94,11 @@ spec:
           {{- else }}
           emptyDir: {}
           {{- end }}
+        {{- with .Values.worker.default.extraVolumes }}
+        # >>> add this block
+        {{- toYaml . | nindent 8 }}
+        # <<< end add
+        {{- end }}
       {{- with .Values.worker.default.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
