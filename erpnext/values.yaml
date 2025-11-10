@@ -105,7 +105,13 @@ worker:
       - name: smsgwsmsgovin-nov25
         mountPath: /etc/ssl/custom
         readOnly: true
-    initContainers: []
+    initContainers:
+      - name: create-ssl-custom-dir
+        image: busybox
+        command: ["mkdir", "-p", "/etc/ssl/custom"]
+        volumeMounts:
+          - name: smsgwsmsgovin-nov25
+            mountPath: /etc/ssl/custom
     sidecars: []
 
   default:
@@ -139,7 +145,13 @@ worker:
       - name: smsgwsmsgovin-nov25
         mountPath: /etc/ssl/custom
         readOnly: true
-    initContainers: []
+    initContainers:
+      - name: create-ssl-custom-dir
+        image: busybox
+        command: ["mkdir", "-p", "/etc/ssl/custom"]
+        volumeMounts:
+          - name: smsgwsmsgovin-nov25
+            mountPath: /etc/ssl/custom
     sidecars: []
 
   short:
@@ -173,7 +185,13 @@ worker:
       - name: smsgwsmsgovin-nov25
         mountPath: /etc/ssl/custom
         readOnly: true
-    initContainers: []
+    initContainers:
+      - name: create-ssl-custom-dir
+        image: busybox
+        command: ["mkdir", "-p", "/etc/ssl/custom"]
+        volumeMounts:
+          - name: smsgwsmsgovin-nov25
+            mountPath: /etc/ssl/custom
     sidecars: []
 
   long:
@@ -207,7 +225,13 @@ worker:
       - name: smsgwsmsgovin-nov25
         mountPath: /etc/ssl/custom
         readOnly: true
-    initContainers: []
+    initContainers:
+      - name: create-ssl-custom-dir
+        image: busybox
+        command: ["mkdir", "-p", "/etc/ssl/custom"]
+        volumeMounts:
+          - name: smsgwsmsgovin-nov25
+            mountPath: /etc/ssl/custom
     sidecars: []
 
   scheduler:
@@ -235,7 +259,13 @@ worker:
       - name: smsgwsmsgovin-nov25
         mountPath: /etc/ssl/custom
         readOnly: true
-    initContainers: []
+    initContainers:
+      - name: create-ssl-custom-dir
+        image: busybox
+        command: ["mkdir", "-p", "/etc/ssl/custom"]
+        volumeMounts:
+          - name: smsgwsmsgovin-nov25
+            mountPath: /etc/ssl/custom
     sidecars: []
 
 
