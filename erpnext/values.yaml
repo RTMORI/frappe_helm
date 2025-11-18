@@ -13,7 +13,7 @@ dbRds: false
 
 image:
   repository: 10.212.154.85/prod_jute/jutesmart
-  tag: 9.0.0
+  tag: 10.0.0
   pullPolicy: IfNotPresent
 
 nginx:
@@ -374,7 +374,7 @@ jobs:
 
   createSite:
     # jobName: ""
-    enabled: true
+    enabled: false # after site created we can make it false
     forceCreate: true
     siteName: "smart.jutecomm.gov.in"
     adminPassword: "CyberuserJuteProduction@!2025*@smart.gov+"
@@ -415,8 +415,8 @@ jobs:
 
   migrate:
     # jobName: ""
-    enabled: false
-    siteName: "prod.frappe.local"
+    enabled: true
+    siteName: "smart.jutecomm.gov.in"
     skipFailing: false
     backoffLimit: 0
     resources: {}
