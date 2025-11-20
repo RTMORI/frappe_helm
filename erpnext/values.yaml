@@ -3,10 +3,10 @@
 # Declare variables to be passed into your templates.
 
 # Configure external database host
-dbHost: "10.212.154.82"
+dbHost: ${{ secrets.DBHOST }}  
 dbPort: 3306
 dbRootUser: "root"
-dbRootPassword: "Cubuser@222"
+dbRootPassword: ${{ secrets.DBROOTPASSWORD }}
 #dbRootPasswordSecret: mariadb-root-password
 #dbRootPasswordKey: password
 dbRds: false
@@ -377,7 +377,7 @@ jobs:
     enabled: false # after site created we can make it false
     forceCreate: true
     siteName: "smart.jutecomm.gov.in"
-    adminPassword: "CyberuserJuteProduction@!2025*@smart.gov+"
+    adminPassword: ${{secrets.ADMINPASSWORD}}
     adminExistingSecret: ""
     adminExistingSecretKey: "admin"
     installApps:
