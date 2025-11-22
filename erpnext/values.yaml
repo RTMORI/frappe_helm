@@ -94,9 +94,9 @@ worker:
     args: []
     envVars:
       - name: REQUESTS_CA_BUNDLE
-        value: /etc/ssl/custom/combined-ca-bundle.pem
+        value: /etc/ssl/custom/ca.crt
       - name: CURL_CA_BUNDLE
-        value: /etc/ssl/custom/combined-ca-bundle.pem
+        value: /etc/ssl/custom/ca.crt
     extraVolumes:
       - name: combined-ca-bundle
         configMap:
@@ -128,9 +128,9 @@ worker:
       probe: {}
     envVars:
       - name: REQUESTS_CA_BUNDLE
-        value: /etc/ssl/custom/combined-ca-bundle.pem
+        value: /etc/ssl/custom/ca.crt
       - name: CURL_CA_BUNDLE
-        value: /etc/ssl/custom/combined-ca-bundle.pem
+        value: /etc/ssl/custom/ca.crt
     extraVolumes:
       - name: combined-ca-bundle
         configMap:
@@ -162,9 +162,9 @@ worker:
       probe: {}
     envVars:
       - name: REQUESTS_CA_BUNDLE
-        value: /etc/ssl/custom/combined-ca-bundle.pem
+        value: /etc/ssl/custom/ca.crt
       - name: CURL_CA_BUNDLE
-        value: /etc/ssl/custom/combined-ca-bundle.pem
+        value: /etc/ssl/custom/ca.crt
     extraVolumes:
       - name: combined-ca-bundle
         configMap:
@@ -196,9 +196,9 @@ worker:
       probe: {}
     envVars:
       - name: REQUESTS_CA_BUNDLE
-        value: /etc/ssl/custom/combined-ca-bundle.pem
+        value: /etc/ssl/custom/ca.crt
       - name: CURL_CA_BUNDLE
-        value: /etc/ssl/custom/combined-ca-bundle.pem
+        value: /etc/ssl/custom/ca.crt
     extraVolumes:
       - name: combined-ca-bundle
         configMap:
@@ -224,9 +224,9 @@ worker:
       probe: {}
     envVars:
       - name: REQUESTS_CA_BUNDLE
-        value: /etc/ssl/custom/combined-ca-bundle.pem
+        value: /etc/ssl/custom/ca.crt
       - name: CURL_CA_BUNDLE
-        value: /etc/ssl/custom/combined-ca-bundle.pem
+        value: /etc/ssl/custom/ca.crt
     extraVolumes:
       - name: combined-ca-bundle
         configMap:
