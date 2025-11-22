@@ -94,15 +94,15 @@ worker:
     args: []
     envVars:
       - name: REQUESTS_CA_BUNDLE
-        value: /etc/ssl/custom/smsgwsmsgovin-nov25.pem
+        value: /etc/ssl/custom/combined-ca-bundle.pem
       - name: CURL_CA_BUNDLE
-        value: /etc/ssl/custom/smsgwsmsgovin-nov25.pem
+        value: /etc/ssl/custom/combined-ca-bundle.pem
     extraVolumes:
-      - name: smsgwsmsgovin-nov25
+      - name: combined-ca-bundle
         configMap:
-          name: smsgwsmsgovin-nov25
+          name: combined-ca-bundle
     extraVolumeMounts:
-      - name: smsgwsmsgovin-nov25
+      - name: combined-ca-bundle
         mountPath: /etc/ssl/custom
         readOnly: true
     initContainers: []
@@ -128,15 +128,15 @@ worker:
       probe: {}
     envVars:
       - name: REQUESTS_CA_BUNDLE
-        value: /etc/ssl/custom/smsgwsmsgovin-nov25.pem
+        value: /etc/ssl/custom/combined-ca-bundle.pem
       - name: CURL_CA_BUNDLE
-        value: /etc/ssl/custom/smsgwsmsgovin-nov25.pem
+        value: /etc/ssl/custom/combined-ca-bundle.pem
     extraVolumes:
-      - name: smsgwsmsgovin-nov25
+      - name: combined-ca-bundle
         configMap:
-          name: smsgwsmsgovin-nov25
+          name: combined-ca-bundle
     extraVolumeMounts:
-      - name: smsgwsmsgovin-nov25
+      - name: combined-ca-bundle
         mountPath: /etc/ssl/custom
         readOnly: true
     initContainers: []
@@ -162,15 +162,15 @@ worker:
       probe: {}
     envVars:
       - name: REQUESTS_CA_BUNDLE
-        value: /etc/ssl/custom/smsgwsmsgovin-nov25.pem
+        value: /etc/ssl/custom/combined-ca-bundle.pem
       - name: CURL_CA_BUNDLE
-        value: /etc/ssl/custom/smsgwsmsgovin-nov25.pem
+        value: /etc/ssl/custom/combined-ca-bundle.pem
     extraVolumes:
-      - name: smsgwsmsgovin-nov25
+      - name: combined-ca-bundle
         configMap:
-          name: smsgwsmsgovin-nov25
+          name: combined-ca-bundle
     extraVolumeMounts:
-      - name: smsgwsmsgovin-nov25
+      - name: combined-ca-bundle
         mountPath: /etc/ssl/custom
         readOnly: true
     initContainers: []
@@ -196,15 +196,15 @@ worker:
       probe: {}
     envVars:
       - name: REQUESTS_CA_BUNDLE
-        value: /etc/ssl/custom/smsgwsmsgovin-nov25.pem
+        value: /etc/ssl/custom/combined-ca-bundle.pem
       - name: CURL_CA_BUNDLE
-        value: /etc/ssl/custom/smsgwsmsgovin-nov25.pem
+        value: /etc/ssl/custom/combined-ca-bundle.pem
     extraVolumes:
-      - name: smsgwsmsgovin-nov25
+      - name: combined-ca-bundle
         configMap:
-          name: smsgwsmsgovin-nov25
+          name: combined-ca-bundle
     extraVolumeMounts:
-      - name: smsgwsmsgovin-nov25
+      - name: combined-ca-bundle
         mountPath: /etc/ssl/custom
         readOnly: true
     initContainers: []
@@ -224,15 +224,15 @@ worker:
       probe: {}
     envVars:
       - name: REQUESTS_CA_BUNDLE
-        value: /etc/ssl/custom/smsgwsmsgovin-nov25.pem
+        value: /etc/ssl/custom/combined-ca-bundle.pem
       - name: CURL_CA_BUNDLE
-        value: /etc/ssl/custom/smsgwsmsgovin-nov25.pem
+        value: /etc/ssl/custom/combined-ca-bundle.pem
     extraVolumes:
-      - name: smsgwsmsgovin-nov25
+      - name: combined-ca-bundle
         configMap:
-          name: smsgwsmsgovin-nov25
+          name: combined-ca-bundle
     extraVolumeMounts:
-      - name: smsgwsmsgovin-nov25
+      - name: combined-ca-bundle
         mountPath: /etc/ssl/custom
         readOnly: true
     initContainers: []
