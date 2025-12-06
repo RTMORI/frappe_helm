@@ -25,11 +25,9 @@ nginx:
     targetCPU: 75
     targetMemory: 75
   config: |
-    log_format main '$http_x_forwarded_for - $remote_addr $remote_user [$time_local] "$request" '
-                    '$status $body_bytes_sent "$http_referer" '
-                    '"$http_user_agent" "$upstream_addr" "$request_time" "$upstream_response_time" "$pipe"';
-
+    log_format main '$http_x_forwarded_for - $remote_addr $remote_user [$time_local] "$request" $status $body_bytes_sent "$http_referer" "$http_user_agent" "$upstream_addr" "$request_time" "$upstream_response_time" "$pipe"';
     access_log /var/log/nginx/access.log main;
+
   environment:
     upstreamRealIPAddress: "127.0.0.1"
     upstreamRealIPRecursive: "off"
