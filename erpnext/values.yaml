@@ -454,7 +454,7 @@ securityContext:
     add:
     - CAP_CHOWN
   # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
+  runAsNonRoot: true
   # runAsUser: 1000
 
 redis-cache:

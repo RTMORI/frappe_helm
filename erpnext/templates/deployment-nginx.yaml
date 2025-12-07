@@ -23,10 +23,24 @@ spec:
       serviceAccountName: {{ include "erpnext.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
-    {{- if .Values.nginx.initContainers }}
       initContainers:
+        - name: install-print-designer
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ["/bin/sh", "-c", "/usr/local/bin/install_print_designer.sh || true"]
+          securityContext:
+            runAsUser: 0
+            runAsNonRoot: false
+          volumeMounts:
+          - name: sites-dir
+            mountPath: /home/frappe/frappe-bench/sites
+        {{- if .Values.nginx.config }}
+          - name: nginx-config
+            mountPath: /etc/nginx/conf.d
+        {{- end }}
+        {{- if .Values.nginx.initContainers }}
         {{- toYaml .Values.nginx.initContainers | nindent 8 }}
-    {{- end }}
+        {{- end }}
       containers:
         - name: nginx
           args:
@@ -71,10 +85,6 @@ spec:
             {{- toYaml .Values.nginx.resources | nindent 12 }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          lifecycle:
-            postStart:
-              exec:
-                command: ["/bin/sh", "-c", "/usr/local/bin/install_print_designer.sh || true"]
           volumeMounts:
           - name: sites-dir
             mountPath: /home/frappe/frappe-bench/sites
