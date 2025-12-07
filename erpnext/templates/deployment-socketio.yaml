@@ -23,22 +23,10 @@ spec:
       serviceAccountName: {{ template "erpnext.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+    {{- if .Values.socketio.initContainers }}
       initContainers:
-        - name: install-print-designer
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command: ["/bin/sh", "-c", "/usr/local/bin/install_print_designer.sh || true"]
-          securityContext:
-            runAsUser: 0
-            runAsNonRoot: false
-          volumeMounts:
-          - name: sites-dir
-            mountPath: /home/frappe/frappe-bench/sites
-          - name: logs
-            mountPath: /home/frappe/frappe-bench/logs
-        {{- if .Values.socketio.initContainers }}
         {{- toYaml .Values.socketio.initContainers | nindent 8 }}
-        {{- end }}
+    {{- end }}
       containers:
         - name: socketio
           args:
@@ -67,6 +55,10 @@ spec:
             {{- toYaml .Values.socketio.readinessProbe | nindent 12 }}
           resources:
             {{- toYaml .Values.socketio.resources | nindent 12 }}
+          lifecycle:
+            postStart:
+              exec:
+                command: ["/bin/sh", "-c", "/usr/local/bin/install_print_designer.sh || true"]
       {{- if .Values.socketio.sidecars }}
         {{- toYaml .Values.socketio.sidecars | nindent 8 }}
       {{- end }}
