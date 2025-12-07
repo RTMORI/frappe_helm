@@ -59,10 +59,6 @@ spec:
             {{- toYaml .Values.worker.gunicorn.readinessProbe | nindent 12 }}
           resources:
             {{- toYaml .Values.worker.gunicorn.resources | nindent 12 }}
-          lifecycle:
-            postStart:
-              exec:
-                command: ["/usr/local/bin/install_print_designer.sh"]
       {{- if .Values.worker.gunicorn.sidecars }}
         {{- toYaml .Values.worker.gunicorn.sidecars | nindent 8 }}
       {{- end }}
