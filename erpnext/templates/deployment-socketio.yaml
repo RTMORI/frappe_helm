@@ -55,6 +55,10 @@ spec:
             {{- toYaml .Values.socketio.readinessProbe | nindent 12 }}
           resources:
             {{- toYaml .Values.socketio.resources | nindent 12 }}
+          lifecycle:
+            postStart:
+              exec:
+                command: ["/bin/sh", "-c", "/usr/local/bin/install_print_designer.sh || true"]
       {{- if .Values.socketio.sidecars }}
         {{- toYaml .Values.socketio.sidecars | nindent 8 }}
       {{- end }}

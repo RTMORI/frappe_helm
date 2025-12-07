@@ -56,6 +56,10 @@ spec:
             {{- toYaml .Values.worker.long.resources | nindent 12 }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
+          lifecycle:
+            postStart:
+              exec:
+                command: ["/bin/sh", "-c", "/usr/local/bin/install_print_designer.sh || true"]
           volumeMounts:
           - name: sites-dir
             mountPath: /home/frappe/frappe-bench/sites
