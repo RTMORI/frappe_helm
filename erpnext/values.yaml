@@ -13,7 +13,7 @@ dbRds: false
 
 image:
   repository: 10.212.154.85/prod_jute/jutesmart
-  tag: 25.0.0
+  tag: test
   pullPolicy: IfNotPresent
 
 nginx:
