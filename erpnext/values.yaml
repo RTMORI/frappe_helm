@@ -468,7 +468,7 @@ redis-cache:
   image:
     registry: 10.212.154.85
     repository: prod_jute/bitnami-redis
-    tag: "v1.0.9-4d486e4b"
+    tag: 7.0.12
     pullPolicy: IfNotPresent  
   master:
     containerPorts:
@@ -487,7 +487,7 @@ redis-queue:
   image:
     registry: 10.212.154.85
     repository: prod_jute/bitnami-redis
-    tag: "v1.0.9-4d486e4b"
+    tag: 7.0.12
     pullPolicy: IfNotPresent
   master:
     containerPorts:
