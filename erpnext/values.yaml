@@ -14,7 +14,7 @@ dbRds: false
 image:
   repository: 10.212.154.85/prod_jute/jutesmart
   tag: v1.1.9
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 nginx:
   replicaCount: 1
