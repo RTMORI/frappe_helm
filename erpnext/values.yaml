@@ -13,7 +13,7 @@ dbRds: false
 
 image:
   repository: 10.212.154.85/prod_jute/jutesmart
-  tag: v1.3.4
+  tag: v1.3.6
   pullPolicy: Always
 
 nginx:
@@ -95,9 +95,11 @@ worker:
     args: []
     envVars:
       - name: REQUESTS_CA_BUNDLE
-        value: /etc/ssl/custom/ca.crt
+        value: /etc/ssl/certs/ca-certificates.crt
       - name: CURL_CA_BUNDLE
-        value: /etc/ssl/custom/ca.crt
+        value: /etc/ssl/certs/ca-certificates.crt
+      - name: SSL_CERT_FILE
+        value: /etc/ssl/certs/ca-certificates.crt        
     extraVolumes:
       - name: combined-ca-bundle
         configMap:
@@ -129,9 +131,11 @@ worker:
       probe: {}
     envVars:
       - name: REQUESTS_CA_BUNDLE
-        value: /etc/ssl/custom/ca.crt
+        value: /etc/ssl/certs/ca-certificates.crt
       - name: CURL_CA_BUNDLE
-        value: /etc/ssl/custom/ca.crt
+        value: /etc/ssl/certs/ca-certificates.crt
+      - name: SSL_CERT_FILE
+        value: /etc/ssl/certs/ca-certificates.crt         
     extraVolumes:
       - name: combined-ca-bundle
         configMap:
@@ -163,9 +167,11 @@ worker:
       probe: {}
     envVars:
       - name: REQUESTS_CA_BUNDLE
-        value: /etc/ssl/custom/ca.crt
+        value: /etc/ssl/certs/ca-certificates.crt
       - name: CURL_CA_BUNDLE
-        value: /etc/ssl/custom/ca.crt
+        value: /etc/ssl/certs/ca-certificates.crt
+      - name: SSL_CERT_FILE
+        value: /etc/ssl/certs/ca-certificates.crt         
     extraVolumes:
       - name: combined-ca-bundle
         configMap:
@@ -197,9 +203,11 @@ worker:
       probe: {}
     envVars:
       - name: REQUESTS_CA_BUNDLE
-        value: /etc/ssl/custom/ca.crt
+        value: /etc/ssl/certs/ca-certificates.crt
       - name: CURL_CA_BUNDLE
-        value: /etc/ssl/custom/ca.crt
+        value: /etc/ssl/certs/ca-certificates.crt
+      - name: SSL_CERT_FILE
+        value: /etc/ssl/certs/ca-certificates.crt         
     extraVolumes:
       - name: combined-ca-bundle
         configMap:
@@ -225,9 +233,11 @@ worker:
       probe: {}
     envVars:
       - name: REQUESTS_CA_BUNDLE
-        value: /etc/ssl/custom/ca.crt
+        value: /etc/ssl/certs/ca-certificates.crt
       - name: CURL_CA_BUNDLE
-        value: /etc/ssl/custom/ca.crt
+        value: /etc/ssl/certs/ca-certificates.crt
+      - name: SSL_CERT_FILE
+        value: /etc/ssl/certs/ca-certificates.crt         
     extraVolumes:
       - name: combined-ca-bundle
         configMap:
