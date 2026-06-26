@@ -70,7 +70,7 @@ worker:
   gunicorn:
     replicaCount: 3
     autoscaling:
-      enabled: true
+      enabled: false
       minReplicas: 2
       maxReplicas: 4
       targetCPU: 75
