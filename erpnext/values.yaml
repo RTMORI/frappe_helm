@@ -13,11 +13,11 @@ dbRds: false
 
 image:
   repository: 10.212.154.85/prod_jute/jutesmart
-  tag: v2.4.3
+  tag: v2.4.4
   pullPolicy: Always
 
 nginx:
-  replicaCount: 1
+  replicaCount: 2
   autoscaling:
     enabled: false
     minReplicas: 1
@@ -68,11 +68,11 @@ nginx:
 
 worker:
   gunicorn:
-    replicaCount: 1
+    replicaCount: 3
     autoscaling:
-      enabled: false
-      minReplicas: 1
-      maxReplicas: 3
+      enabled: true
+      minReplicas: 2
+      maxReplicas: 4
       targetCPU: 75
       targetMemory: 75
     livenessProbe:
@@ -112,7 +112,7 @@ worker:
     sidecars: []
 
   default:
-    replicaCount: 1
+    replicaCount: 2
     autoscaling:
       enabled: false
       minReplicas: 1
@@ -148,7 +148,7 @@ worker:
     sidecars: []
 
   short:
-    replicaCount: 1
+    replicaCount: 2
     autoscaling:
       enabled: false
       minReplicas: 1
