@@ -1,5 +1,5 @@
 # Default values for erpnext.
-# This is a YAML-formatted file. 
+# This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 # Configure external database host
@@ -478,7 +478,7 @@ redis-cache:
   image:
     registry: 10.212.154.85
     repository: prod_jute/bitnami-redis
-    tag: "v2.6.7"
+    tag: latest
     pullPolicy: IfNotPresent  
   master:
     containerPorts:
@@ -497,7 +497,7 @@ redis-queue:
   image:
     registry: 10.212.154.85
     repository: prod_jute/bitnami-redis
-    tag: "v2.6.7"
+    tag: latest
     pullPolicy: IfNotPresent
   master:
     containerPorts:
