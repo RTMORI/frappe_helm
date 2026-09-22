@@ -17,7 +17,7 @@ image:
   pullPolicy: Always
 
 nginx:
-  replicaCount: 2
+  replicaCount: 3
   autoscaling:
     enabled: false
     minReplicas: 1
