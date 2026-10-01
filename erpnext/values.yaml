@@ -29,10 +29,10 @@ nginx:
 
   environment:
     upstreamRealIPAddress: "127.0.0.1"
-    upstreamRealIPRecursive: "off"
+    upstreamRealIPRecursive: "on"
     upstreamRealIPHeader: "X-Forwarded-For"
     frappeSiteNameHeader: "$host"
-    proxyReadTimeout: "120"
+    proxyReadTimeout: "600"
     clientMaxBodySize: "50m"
   livenessProbe:
     tcpSocket:
